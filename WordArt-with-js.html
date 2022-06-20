@@ -1,0 +1,26 @@
+<h1 class="m-word-art">MERTER GÜLBAHAR</h1>
+
+<script>
+$(()=>{
+	var textEl = $(".m-word-art");
+  var text1 = textEl.text();
+  var text1L = text1.length;
+  var charList = text1.split("");
+  var newText ="";
+  var maxSize = 30; //px
+  $.each(charList,function(i,el){
+   var t="";
+  if(i < text1L/2 ){
+  	maxSize -= 1;
+    t  = '<span style="font-size:'+maxSize+'px" >'+el+'</span>';
+    
+  }
+  else if(i >= text1L/2){
+  	maxSize += 1;
+    t  = '<span style="font-size:'+maxSize+'px" >'+el+'</span>';
+  }
+  newText += t;
+  });
+  textEl.html(newText);
+});
+</script>
